@@ -34,6 +34,7 @@ window.addEventListener("load", function () {
     const num2 = parseInt(document.querySelector("#number-input2").value);
     const operation = document.getElementById("operation").value;
 
+    let result;
     if (operation === "add") {
       result = add(num1, num2);
     } else if (operation === "subtract") {
@@ -43,8 +44,9 @@ window.addEventListener("load", function () {
     } else if (operation === "divide") {
       result = div(num1, num2);
     }
+
+     document.getElementById("printed-result").innerText = result;
   });
   //results function things
-   const result = "";
-   document.getElementById("printed-text").innerText = result;
+  
 });
