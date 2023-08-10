@@ -1,38 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
     <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Calculator</title>
         <link href="css/styles.css" rel="stylesheet" type="text/css" />
         <script src="js/scripts.js"></script>
-        <title>Calculator</title>
     </head>
-
     <body>
-        <!-- form
-  input for number (remember to parseInt)
-  radio button/select box/etc for add/sub/mult/div 
-  submit button
-form -->
+        <h1>Calculator</h1>
+        <form id="calculator">
+            <label for="input1">1st number:</label>
+            <input id="input1" type="text" />
+            <br />
+            <label for="input2">2nd number:</label>
+            <input id="input2" type="text" />
+            <br />
 
-        <form id="input-form">
-            <label for="number-input">Enter a number here:</label>
-            <input id="number-input1" type="text" name="number-input1" />
-            <input id="number-input2" type="text" name="number-input2" />
-            <select id="operation">
-                <option value="add">+</option>
-                <option value="subtract">-</option>
-                <option value="multiply">*</option>
-                <option value="divide">/</option>
-            </select>
-            <button type="submit" id="sumbit">Calculate</button>
+            <label>
+                <input type="radio" name="operator" value="add" />
+                add
+            </label>
+            <label>
+                <input type="radio" name="operator" value="subtract" />
+                subtract
+            </label>
+            <label>
+                <input type="radio" name="operator" value="multiply" />
+                multiply
+            </label>
+            <label>
+                <input type="radio" name="operator" value="divide" />
+                divide
+            </label>
+
+            <button type="submit" class="btn">Go!</button>
         </form>
 
-        <!-- div results needs to be hidden at first (option to have reset button to make hidden again)
-div -->
-        <div>
-            <h3>Result:</h3>
-            <p id="printed-result"></p>
-        </div>
+        <h2>Results</h2>
+        <p id="output"></p>
     </body>
 </html>

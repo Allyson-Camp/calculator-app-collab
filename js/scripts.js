@@ -1,55 +1,44 @@
-// needed:
-// onload function DONE
-//query select or getbyid all elements needed DONE
-//event listener for submit button so we know its been clicked DONE
-//if/else statement for calculation to be performed DONE
-//variable for result
-
-//Business logic
-// calculation functions
+// Business Logic
 function add(num1, num2) {
     return num1 + num2;
 }
 
-function sub(num1, num2) {
+function subtract(num1, num2) {
     return num1 - num2;
 }
 
-function mult(num1, num2) {
+function multiply(num1, num2) {
     return num1 * num2;
 }
 
-function div(num1, num2) {
+function divide(num1, num2) {
     return num1 / num2;
 }
-//UI logic
-//events and other things that make the functions run
+
+// User Interface Logic
+function handleCalculation(event) {
+    event.preventDefault();
+    const number1 = parseInt(document.querySelector("input#input1").value);
+    const number2 = parseInt(document.querySelector("input#input2").value);
+    const operator = document.querySelector(
+        "input[name='operator']:checked"
+    ).value;
+
+    let result;
+    if (operator === "add") {
+        result = ad(number1, number2);
+    } else if (operator === "subtract") {
+        result = subtract(number1, number2);
+    } else if (operator === "multiply") {
+        result = multiply(number1, number2);
+    } else if (operator === "divide") {
+        result = divide(number1, number2);
+    }
+
+    document.getElementById("output").innerText = result;
+}
 
 window.addEventListener("load", function () {
-  const form = document.querySelector("form#input-form");
- 
-  form.addEventListener("submit", function (event) {
-    event.preventDefault();
-    const num1 = parseInt(document.querySelector("#number-input1").value);
-    const num2 = parseInt(document.querySelector("#number-input2").value);
-    const operation = document.getElementById("operation");
-    console.log("first:" + num1);
-    console.log("2nd:" + num2);
-    console.log("operation" + operation);
-   
-
-    if (operation === "add") {
-      result = add(num1, num2);
-    } else if (operation === "sub") {
-      result = sub(num1, num2);
-    } else if (operation === "mult") {
-      result = mult(num1, num2);
-    } else if (operation === "div") {
-      result = div(num1, num2);
-    }
-  });
-  //results function things
-   const result = ""; //needs to be above the if/else i think
-  document.getElementById("printed-text").innerText = result;
-  //some kind of return statement?
+    const form = document.getElementById("calculator");
+    form.addEventListener("submit", handleCalculation);
 });
