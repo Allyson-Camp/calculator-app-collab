@@ -1,7 +1,7 @@
 // needed:
 // onload function DONE
 //query select or getbyid all elements needed DONE
-//event listener for submit button so we know its been clicked
+//event listener for submit button so we know its been clicked DONE
 //if/else statement for calculation to be performed DONE
 //variable for result
 
@@ -32,8 +32,12 @@ window.addEventListener("load", function () {
     event.preventDefault();
     const num1 = parseInt(document.querySelector("#number-input1").value);
     const num2 = parseInt(document.querySelector("#number-input2").value);
-    const operation = document.querySelector("#operation");
-    let result = "";
+    const operation = document.getElementById("operation");
+    console.log("first:" + num1);
+    console.log("2nd:" + num2);
+    console.log("operation" + operation);
+   
+
     if (operation === "add") {
       result = add(num1, num2);
     } else if (operation === "sub") {
@@ -43,6 +47,8 @@ window.addEventListener("load", function () {
     } else if (operation === "div") {
       result = div(num1, num2);
     }
-    console.log("working");
   });
+  //results function things
+   const result = "";
+   document.getElementById("printed-text").innerText = result;
 });
