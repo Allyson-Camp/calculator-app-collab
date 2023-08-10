@@ -7,6 +7,7 @@
         <script src="js/scripts.js"></script>
         <title>Calculator</title>
     </head>
+
     <body>
         <!-- form
   input for number (remember to parseInt)
@@ -14,16 +15,20 @@
   submit button
 form -->
 
-        <form>
+        <form id="input-form">
             <label for="number-input">Enter a number here:</label>
             <input id="number-input1" type="text" name="number-input1" />
-             <input id="number-input2" type="text" name="number-input2" />
-            <button type="submit">Calculate</button>
+            <input id="number-input2" type="text" name="number-input2" />
+            <select id="operation">
+                <option value="add">+</option>
+                <option value="subtract">-</option>
+                <option value="multiply">*</option>
+                <option value="divide">/</option>
+            </select>
+            <button type="submit" id="sumbit">Calculate</button>
         </form>
 
-        <!-- div
-  results
-  needs to be hidden at first (option to have reset button to make hidden again)
+        <!-- div results needs to be hidden at first (option to have reset button to make hidden again)
 div -->
         <div class="result">
             <h3>Result:</h3>
