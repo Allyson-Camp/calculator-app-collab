@@ -49,6 +49,7 @@ window.addEventListener("load", function () {
     }
   });
   //results function things
-   const result = "";
-   document.getElementById("printed-text").innerText = result;
+   const result = ""; //needs to be above the if/else i think
+  document.getElementById("printed-text").innerText = result;
+  //some kind of return statement?
 });
