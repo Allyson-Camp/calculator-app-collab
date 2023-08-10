@@ -27,23 +27,22 @@ function div(num1, num2) {
 
 window.addEventListener("load", function () {
   const form = document.querySelector("form#input-form");
-  let submitBtn = document.querySelector("button#submit");
-  const num1 = parseInt(document.querySelector("form#number-input1").value);
-  const num2 = parseInt(this.document.querySelector("form#number-input2").value);
-  const operation = document.querySelector("form#operation");
-
-form.addEventListener("submit"), function(event) {
-    event.preventDefeault();
-  
-  let result = "";
+ 
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
+    const num1 = parseInt(document.querySelector("#number-input1").value);
+    const num2 = parseInt(document.querySelector("#number-input2").value);
+    const operation = document.querySelector("#operation");
+    let result = "";
     if (operation === "add") {
-        result = add(num1, num2);
+      result = add(num1, num2);
     } else if (operation === "sub") {
-        result = sub(num1, num2);
+      result = sub(num1, num2);
     } else if (operation === "mult") {
-        result = mult(num1, num2);
+      result = mult(num1, num2);
     } else if (operation === "div") {
-        result = div(num1, num2);
+      result = div(num1, num2);
     }
-}
+    console.log("working");
+  });
 });
