@@ -40,11 +40,11 @@ window.addEventListener("load", function () {
 
     if (operation === "add") {
       result = add(num1, num2);
-    } else if (operation === "sub") {
+    } else if (operation === "subtract") {
       result = sub(num1, num2);
-    } else if (operation === "mult") {
+    } else if (operation === "multiply") {
       result = mult(num1, num2);
-    } else if (operation === "div") {
+    } else if (operation === "divide") {
       result = div(num1, num2);
     }
   });
