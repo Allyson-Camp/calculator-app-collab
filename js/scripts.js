@@ -32,11 +32,7 @@ window.addEventListener("load", function () {
     event.preventDefault();
     const num1 = parseInt(document.querySelector("#number-input1").value);
     const num2 = parseInt(document.querySelector("#number-input2").value);
-    const operation = document.getElementById("operation");
-    console.log("first:" + num1);
-    console.log("2nd:" + num2);
-    console.log("operation" + operation);
-   
+    const operation = document.getElementById("operation").value;
 
     if (operation === "add") {
       result = add(num1, num2);
